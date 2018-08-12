@@ -16,6 +16,8 @@
         <fileset id="fileset" name="Springmvc" removed="false">
           <file>file://$MODULE_DIR$/src/main/resources/springmvc.xml</file>
           <file>file://$MODULE_DIR$/src/main/resources/spring-dao.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/spring-security</file>
+          <file>file://$MODULE_DIR$/src/main/resources/spring-security.xml</file>
         </fileset>
       </configuration>
     </facet>
