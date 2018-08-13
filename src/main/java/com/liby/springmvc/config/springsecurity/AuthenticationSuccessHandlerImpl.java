@@ -11,7 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * 功能：
+ * 功能：Spring Security成功登陆后页面处理器，
+ * 结合Spring-security.xml文件下authentication-success-handler-ref="authenticationSuccessHandlerImpl"使用
  *
  * @Author Created by yebing
  * @Date 2018/8/12 21:15
