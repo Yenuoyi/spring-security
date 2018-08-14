@@ -56,6 +56,13 @@
         -->
         <csrf disabled="true"/>
 
+        <!-- 并发session控制，单点登录 -->
+        <session-management>
+            <!-- <concurrency-control max-sessions="1" "/> 此配置允许第二次登录，但第一次登录将失效-->
+            <!-- 用户登录多次。第二次登录将导致第一次登录变成无效。通常我们更想不允许第二次登录 -->
+            <concurrency-control max-sessions="1" error-if-maximum-exceeded="true"/>
+        </session-management>
+
     </http>
     <!--<authentication-manager>-->
         <!--<authentication-provider>-->

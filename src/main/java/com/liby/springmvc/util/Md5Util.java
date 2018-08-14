@@ -37,10 +37,5 @@ public class Md5Util {
         }
         return stringBuffer.toString();
     }
-
-    public static void main(String[] args){
-        Md5Util md5Util = new Md5Util();
-        System.out.println(md5Util.encode("123456"));
-    }
 }
 
