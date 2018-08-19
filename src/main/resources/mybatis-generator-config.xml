@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
 <generatorConfiguration>
     <!--导入属性配置 -->
-    <properties resource="com/liby/springmvc/dao/db.properties"></properties>
+    <properties url="file:///L:/IdeaProject/springsecurity/src/main/resources/db.properties"/>
     <!-- 本地数据库驱动程序jar包的全路径 -->
     <classPathEntry location="${jdbc.driverLocation}"/>
 
@@ -18,7 +18,7 @@
         <jdbcConnection driverClass="${jdbc.driver}"
                         connectionURL="${jdbc.url}"
                         userId="${jdbc.name}"
-                        password="${jdbc.jpassword}"/>
+                        password="${jdbc.password}"/>
 
         <javaTypeResolver>
             <property name="forceBigDecimals" value="false"/>
@@ -41,7 +41,7 @@
         </javaClientGenerator>
 
         <!-- 相关表的配置 -->
-        <table tableName="test" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
+        <table tableName="course" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
                enableUpdateByExample="false"/>
     </context>
 </generatorConfiguration>
