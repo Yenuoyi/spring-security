@@ -11,6 +11,11 @@
     <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
   </listener>
 
+  <!-- spring security session监听器 -->
+  <listener>
+    <listener-class>org.springframework.security.web.session.HttpSessionEventPublisher</listener-class>
+  </listener>
+
   <!-- Spring MVC servlet -->
   <servlet>
     <servlet-name>SpringMVC</servlet-name>

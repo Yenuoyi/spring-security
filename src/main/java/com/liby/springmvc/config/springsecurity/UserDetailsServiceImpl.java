@@ -2,6 +2,8 @@ package com.liby.springmvc.config.springsecurity;
 
 import com.liby.springmvc.dao.UserDao;
 import com.liby.springmvc.domain.UserBean;
+import com.liby.springmvc.util.Md5Util;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -14,8 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 功能：
- *
+ * 功能：动态获取用户账号密码认证
  * @Author Created by yebing
  * @Date 2018/8/12 22:05
  * @Version 1.0.0
@@ -24,6 +25,9 @@ import java.util.List;
 public class UserDetailsServiceImpl implements UserDetailsService {
     @Autowired
     private UserDao userDao;
+    @Autowired
+    private Md5Util md5Util;
+    private static Logger logger = Logger.getLogger(UserDetailsServiceImpl.class);
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         UserBean userBean = userDao.getUser(username);
@@ -36,6 +40,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         List<GrantedAuthority> auths = new ArrayList<GrantedAuthority>();
         //获取角色，放到list里面
         getRoles(userBean,auths);
+        logger.info("数据库密码："+userBean.getPassword());
         //返回包括权限角色的User给security
         return new User(username, userBean.getPassword(), true, true, true, true, auths);
     }
