@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
 <generatorConfiguration>
     <!--导入属性配置 -->
-    <properties resource="resource\db.properties"></properties>
+    <properties resource="com/liby/springmvc/dao/db.properties"></properties>
     <!-- 本地数据库驱动程序jar包的全路径 -->
     <classPathEntry location="${jdbc.driverLocation}"/>
 
